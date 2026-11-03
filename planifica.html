@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifica tu salida | FESTI-FINDER</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold border rounded px-3 py-2" href="index.html">FESTI-FINDER</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="explorar.html">Explorar eventos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="encuentra.html">Encuentra tu festival</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guia.html">Guía del evento</a></li>
+                    <li class="nav-item"><a class="nav-link" href="planifica.html">Planifica tu salida</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+
+        <header class="text-center mb-4">
+            <h1 class="h2 fw-bold">Planifica tu salida</h1>
+            <p>Organiza tu presupuesto y gastos para disfrutar tu evento.</p>
+        </header>
+
+        <!-- RESUMEN DEL PRESUPUESTO -->
+        <section class="row g-3 text-center mb-4">
+
+            <div class="col-12 col-md-4">
+                <div class="summary-box">
+                    Presupuesto total
+                    <strong id="total-presupuesto">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="summary-box">
+                    Gastado
+                    <strong id="total-gastado">$0.00</strong>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="summary-box">
+                    Restante
+                    <strong id="restante">$0.00</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- PRESUPUESTO TOTAL -->
+        <form id="presupuesto-form" class="border rounded p-3 mb-3">
+
+            <div class="row g-3 align-items-end">
+
+                <div class="col-12 col-md-6">
+                    <label class="form-label" for="presupuesto-total">
+                        Define tu presupuesto total (MXN)
+                    </label>
+
+                    <input
+                        id="presupuesto-total"
+                        class="form-control"
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="Ej. 5000"
+                    >
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <button class="btn btn-dark w-100">
+                        Actualizar presupuesto
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+        <!-- TABLA DE GASTOS -->
+        <div class="table-responsive">
+
+            <table class="table table-bordered align-middle">
+
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
+                        <th>Costo estimado (MXN)</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Transporte</td>
+                        <td>Gasolina, Uber, avión o autobús</td>
+                        <td><input class="form-control gasto" type="number" min="0" step="0.01" placeholder="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Boletos</td>
+                        <td>Boletos del concierto</td>
+                        <td><input class="form-control gasto" type="number" min="0" step="0.01" placeholder="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Alimentación</td>
+                        <td>Comida y bebidas</td>
+                        <td><input class="form-control gasto" type="number" min="0" step="0.01" placeholder="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Hospedaje</td>
+                        <td>Hotel u hospedaje</td>
+                        <td><input class="form-control gasto" type="number" min="0" step="0.01" placeholder="0"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Otros</td>
+                        <td>Souvenirs, estacionamiento, etc.</td>
+                        <td><input class="form-control gasto" type="number" min="0" step="0.01" placeholder="0"></td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th colspan="2">Total estimado</th>
+                        <th id="suma-gastos">$0.00</th>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+        </div>
+
+        <p id="aviso-presupuesto" class="small text-muted">
+            Ingresa tu presupuesto y los gastos para calcular cuánto te queda.
+        </p>
+
+    </main>
+
+    <footer class="border-top mt-5 py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+            <span>© 2026 FESTI-FINDER</span>
+            <div>
+                <a href="#" class="footer-link me-3">Sobre nosotros</a>
+                <a href="#" class="footer-link me-3">Términos</a>
+                <a href="#" class="footer-link">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
